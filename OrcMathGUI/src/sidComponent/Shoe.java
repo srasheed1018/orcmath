@@ -15,7 +15,7 @@ public class Shoe extends Component {
 	private boolean ds;
 	
 	public Shoe(String brand, String name, String colorway, double size, boolean ds) {
-		super(0, 0, 0, 0);
+		super(40, 40, 100, 100);
 		this.brand = brand;
 		this.name = name;
 		this.colorway = colorway;

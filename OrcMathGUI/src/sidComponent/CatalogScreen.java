@@ -76,7 +76,8 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester{
 	
 	protected void addClicked() {
 		Shoe s = new Shoe(brandField.getText(), nameField.getText(), colorField.getText(), Integer.parseInt(sizeField.getText()), true);
-		text.setText(text.getText()+"\n"+s);
+		text.setText("Shoes:"+"\n"+text.getText()+"\n"+s);
+		catalog.addShoe(s);
 		
 	}
 

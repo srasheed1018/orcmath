@@ -24,12 +24,12 @@ public class ShoeMaker {
 	}
 	
 	public ShoeMaker() {
-		tempBrand = in.nextLine();
-		tempName = in.nextLine();
-		tempColor = in.nextLine();
-		tempSz = in.nextInt();
-		tempDs = in.nextBoolean();
-		shoelist.add(new Shoe(tempBrand, tempName, tempColor, tempSz, tempDs));
+		//tempBrand = in.nextLine();
+	//	tempName = in.nextLine();
+	//	tempColor = in.nextLine();
+	//	tempSz = in.nextInt();
+	//	tempDs = in.nextBoolean();
+		//shoelist.add(new Shoe(tempBrand, tempName, tempColor, tempSz, tempDs));
 	}
 
 	public String getCSVContent() {
@@ -52,5 +52,9 @@ public class ShoeMaker {
 		}catch(IOException e){
 			System.out.println("An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
 		}
+	}
+
+	public void addShoe(Shoe s) {
+		shoelist.add(s);		
 	}
 }

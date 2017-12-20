@@ -33,14 +33,15 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester{
 		brandField = new TextField(20,100,200,30,"...","Brand");
 		nameField = new TextField(20,150,200,30,"...","Name");
 		colorField = new TextField(20,200,200,30,"...","Colorway");
-		sizeField = new TextField(20,250,200,30,"...","Size");
+		sizeField = new TextField(20,250,200,30,"...","Size (US)");
+		sizeField.setInputType(TextField.INPUT_TYPE_NUMERIC);
 		text = new TextArea(20,350,200,30,"");
 		save = new Button(20,300,70,40,"Save", new Action() {
 			
 			@Override
 			public void act() {
 				
-				addClicked();
+				
 				
 			}
 		});
@@ -74,7 +75,8 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester{
 
 	
 	protected void addClicked() {
-		text.setText("woah you clicked a button bro");
+		Shoe s = new Shoe(brandField.getText(), nameField.getText(), colorField.getText(), Integer.parseInt(sizeField.getText()), true);
+		text.setText(text.getText()+"\n"+s);
 		
 	}
 

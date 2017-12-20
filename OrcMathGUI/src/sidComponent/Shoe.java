@@ -11,10 +11,10 @@ public class Shoe extends Component {
 	private String brand;
 	private String name;
 	private String colorway;
-	private double size;
+	private int size;
 	private boolean ds;
 	
-	public Shoe(String brand, String name, String colorway, double size, boolean ds) {
+	public Shoe(String brand, String name, String colorway, int size, boolean ds) {
 		super(40, 40, 100, 100);
 		this.brand = brand;
 		this.name = name;

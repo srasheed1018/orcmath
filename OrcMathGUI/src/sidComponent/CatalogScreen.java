@@ -1,19 +1,27 @@
 package sidComponent;
 
+import java.io.File;
 import java.util.List;
 
+import javax.swing.JFrame;
+
 import guiTeacher.components.*;
+import guiTeacher.interfaces.FileRequester;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.FullFunctionScreen;
 
-public class CatalogScreen extends FullFunctionScreen {
+public class CatalogScreen extends FullFunctionScreen implements FileRequester{
 
 	private TextField brandField;
 	private TextField nameField;
 	private TextField colorField;
 	private TextField sizeField;
 	private TextArea text;
-	private Button submit;
+	private Button add;
+	private Button save;
+	private Button delete;
+	private FileOpenButton open;
+	private ShoeMaker maker = new ShoeMaker(); 
 	
 	public CatalogScreen(int width, int height) {
 		super(width, height);
@@ -27,7 +35,7 @@ public class CatalogScreen extends FullFunctionScreen {
 		colorField = new TextField(20,200,200,30,"...","Colorway");
 		sizeField = new TextField(20,250,200,30,"...","Size");
 		text = new TextArea(20,350,200,30,"");
-		submit = new Button(20,300,100,50,"Done", new Action() {
+		save = new Button(20,300,70,40,"Save", new Action() {
 			
 			@Override
 			public void act() {
@@ -36,12 +44,32 @@ public class CatalogScreen extends FullFunctionScreen {
 				
 			}
 		});
+		add = new Button(100,300,70,40,"Add", new Action() {
+			
+			@Override
+			public void act() {
+				addClicked();
+				
+			}
+		});
+		delete = new Button(180,300,70,40,"Delete", new Action() {
+			
+			@Override
+			public void act() {
+				addClicked();
+				
+			}
+		});
+		open = new FileOpenButton(260, 300, 70, 40, null, this);
 		viewObjects.add(brandField);
 		viewObjects.add(nameField);
 		viewObjects.add(colorField);
 		viewObjects.add(sizeField);
 		viewObjects.add(text);
-		viewObjects.add(submit);
+		viewObjects.add(save);
+		viewObjects.add(add);
+		viewObjects.add(delete);
+		viewObjects.add(open);
 	}
 
 	
@@ -50,7 +78,16 @@ public class CatalogScreen extends FullFunctionScreen {
 		
 	}
 
-	public void blah() {
+
+	@Override
+	public void setFile(File f) {
+		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public JFrame getWindow() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

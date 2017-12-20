@@ -3,7 +3,7 @@ package sidComponent;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CatalogMaker {
+public class ShoeMaker {
 
 	private ArrayList<Shoe> shoelist = new ArrayList<Shoe>();
 	private Scanner in = new Scanner(System.in);
@@ -14,12 +14,12 @@ public class CatalogMaker {
 	private boolean tempDs;
 	
 	public static void main(String[] args) {
-		CatalogMaker maker = new CatalogMaker();
+		ShoeMaker maker = new ShoeMaker();
 		System.out.println(maker.getCSVContent());
 
 	}
 	
-	public CatalogMaker() {
+	public ShoeMaker() {
 		tempBrand = in.nextLine();
 		tempName = in.nextLine();
 		tempColor = in.nextLine();

@@ -21,7 +21,7 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester{
 	private Button save;
 	private Button delete;
 	private FileOpenButton open;
-	private ShoeMaker maker = new ShoeMaker(); 
+	private ShoeMaker catalog = new ShoeMaker(); 
 	
 	public CatalogScreen(int width, int height) {
 		super(width, height);

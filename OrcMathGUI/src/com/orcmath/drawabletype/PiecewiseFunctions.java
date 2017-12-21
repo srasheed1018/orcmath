@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import com.lessonflow.lesson.Lesson;
 import com.orcmath.drawable.CoordinateImage;
 import com.orcmath.drawable.CoordinatePoint;
 import com.orcmath.drawable.Graph;

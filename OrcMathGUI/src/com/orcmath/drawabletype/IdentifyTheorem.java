@@ -25,11 +25,12 @@ import com.orcmath.drawable.CoordinateImage;
 import com.orcmath.local.MultipleChoice;
 import com.orcmath.local.Problem;
 import com.orcmath.local.WorkTable;
-import com.orcmath.local.Worksheet;
 import com.orcmath.objects.Ops;
 import com.orcmath.objects.Variable;
 import com.orcmath.type.Type;
 import com.orcmath.type.WriteLinearEquation;
+
+import data.Worksheet;
 
 public class IdentifyTheorem extends DynamicType{
 
@@ -49,7 +50,8 @@ public class IdentifyTheorem extends DynamicType{
 		
 		//static fields
 		public static String keyTheorem="";//always include
-		public static int questionWidth = Worksheet.latexWidth;
+		public static Worksheet worksheet = new Worksheet();
+		public static int questionWidth = worksheet.latexWidth;
 		public static String[] theoremFamily={
 			"Cirles",
 //			"Coordinate Geometry"

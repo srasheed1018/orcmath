@@ -98,6 +98,8 @@ public class Worksheet implements Task{
 	protected Document document;
 	protected PdfWriter writer;
 
+	public int latexWidth;
+
 	//constants
 	public static final String SUBFOLDER_WORKSHEETS = "worksheets";
 	public static final String SUBFOLDER_IMAGES = "images";

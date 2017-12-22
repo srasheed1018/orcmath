@@ -25,8 +25,8 @@ public class HolidayCardScreen extends FullFunctionScreen {
 	public void initAllObjects(List<Visible> viewObjects) {
 
 		text = new TextArea(69, 99, 412, 250, "Happppppppppppppppppy New Yearsss");
-		flipL = new Button(0, 0, 23, 771, "|", null);
-		flipR = new Button(527, 0, 23, 771, "|", null);
+		flipL = new RotatedButton(0, 0, 29, 751, "FLIP", null, -Math.PI/2, 2, 2);
+		flipR = new RotatedButton(510, 0, 29, 751, "FLIP", null, Math.PI/2, 2, 2);
 		
 		viewObjects.add(text);
 		viewObjects.add(flipL);

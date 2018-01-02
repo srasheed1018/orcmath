@@ -1,4 +1,4 @@
-package sisikneeHolidayCard;
+package sisikneeFli;
 
 import java.awt.Color;
 import java.awt.geom.AffineTransform;
@@ -13,22 +13,22 @@ public class RotatedButton extends Button {
 	private double scaleX;
 	private double scaleY;
 	
-	public RotatedButton(int x, int y, int w, int h, String text, Color color, Action action, double rotation, double scaleX, double scaleY) {
+	public RotatedButton(int x, int y, int w, int h, String text, Color color, Action action, double rotation/*, double scaleX, double scaleY*/) {
 		
 		super(x, y, w, h, text, color, action);
 		this.rotation = rotation;
-		this.scaleX = scaleX;
-		this.scaleY = scaleY;
+		/*this.scaleX = scaleX;
+		this.scaleY = scaleY*/;
 		update();
 		
 	}
 
-	public RotatedButton(int x, int y, int w, int h, String text, Action action, double rotation, double scaleX, double scaleY) {
+	public RotatedButton(int x, int y, int w, int h, String text, Action action, double rotation/*, double scaleX, double scaleY*/) {
 		
 		super(x, y, w, h, text, action);
 		this.rotation = rotation;
-		this.scaleX = scaleX;
-		this.scaleY = scaleY;
+		/*this.scaleX = scaleX;
+		this.scaleY = scaleY;*/
 		update();
 		
 	}
@@ -39,7 +39,7 @@ public class RotatedButton extends Button {
 		
 		super.update();
 		rotate(rotation);
-		scale(scaleX, scaleY);
+		/*scale(scaleX, scaleY);*/
 		
 	}
 	
@@ -54,7 +54,7 @@ public class RotatedButton extends Button {
 		
 	}
 	
-	public void scale(double x, double y) {
+	/*public void scale(double x, double y) {
 		
 		AffineTransform at = new AffineTransform();
 		at.scale(x, y);
@@ -63,6 +63,6 @@ public class RotatedButton extends Button {
 		hoverImage = size.filter(hoverImage, null);
 		image = size.filter(image, null);
 		
-	}
+	}*/
 
 }

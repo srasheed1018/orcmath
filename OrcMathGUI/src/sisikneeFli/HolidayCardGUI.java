@@ -1,10 +1,13 @@
-package sisikneeHolidayCard;
+package sisikneeFli;
 
 import guiTeacher.GUIApplication;
 
 public class HolidayCardGUI extends GUIApplication {
 	
 	private static final long serialVersionUID = -2452328323352199392L;
+	public static HolidayCardGUI card;
+	public static HolidayCardScreen front;
+	public static HolidayCardScreen back;
 	
 	public HolidayCardGUI(int width, int height) {
 		
@@ -15,7 +18,7 @@ public class HolidayCardGUI extends GUIApplication {
 	
 	public static void main(String[] args) {
 		
-		HolidayCardGUI card = new HolidayCardGUI(550, 751);
+		card = new HolidayCardGUI(550, 751);
 		Thread holiday = new Thread(card);
 		holiday.start();
 		
@@ -24,8 +27,10 @@ public class HolidayCardGUI extends GUIApplication {
 	@Override
 	public void initScreen() {
 		
-		HolidayCardScreen card = new HolidayCardScreen(550, 751);
-		setScreen(card);
+		front = new HolidayCardScreen(550, 751);
+		back = new HolidayCardScreen(550, 751);
+		
+		setScreen(front);
 
 	}
 

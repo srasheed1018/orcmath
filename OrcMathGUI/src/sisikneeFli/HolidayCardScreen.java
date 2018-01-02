@@ -1,4 +1,4 @@
-package sisikneeHolidayCard;
+package sisikneeFli;
 
 import java.util.List;
 
@@ -25,8 +25,8 @@ public class HolidayCardScreen extends FullFunctionScreen {
 	public void initAllObjects(List<Visible> viewObjects) {
 
 		text = new TextArea(69, 99, 412, 250, "Happppppppppppppppppy New Yearsss");
-		flipL = new RotatedButton(0, 0, 29, 751, "FLIP", null, -Math.PI/2, 2, 2);
-		flipR = new RotatedButton(510, 0, 29, 751, "FLIP", null, Math.PI/2, 2, 2);
+		flipL = new RotatedButton(0, 0, 29, 751, "FLIP", null, -Math.PI / 2 /*, 2, 2*/);
+		flipR = new RotatedButton(510, 0, 29, 751, "FLIP", null, Math.PI / 2 /*, 2, 2*/);
 		
 		viewObjects.add(text);
 		viewObjects.add(flipL);

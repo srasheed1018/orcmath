@@ -20,6 +20,7 @@ import guiTeacher.interfaces.KeyedComponent;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.FileLoader;
 import guiTeacher.userInterfaces.FullFunctionScreen;
+import sidComponent.Shoe;
 
 public class Sampler extends GUIApplication implements FileRequester{
 

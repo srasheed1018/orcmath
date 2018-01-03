@@ -24,6 +24,8 @@ import java.awt.Cursor;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 
 import guiTeacher.GUIApplication;
@@ -33,7 +35,7 @@ import guiTeacher.interfaces.Clickable;
 public class Button extends TextLabel implements Clickable{
 
 	private Action action;
-	private BufferedImage hoverImage;
+	protected BufferedImage hoverImage;
 	private boolean hovered;
 	private boolean enabled;
 	protected int curveX;
@@ -54,7 +56,6 @@ public class Button extends TextLabel implements Clickable{
 		super(x, y, w, h, text);
 		this.action = action;
 		enabled = true;
-		setCurve(35,25);
 		setActiveBorderColor(Color.BLACK);
 		update();
 
@@ -182,8 +183,6 @@ public class Button extends TextLabel implements Clickable{
 	public boolean isHovered() {
 		return hovered;
 	}
-	
-	
 	
 	
 	

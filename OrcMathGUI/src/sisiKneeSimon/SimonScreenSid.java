@@ -45,7 +45,7 @@ public class SimonScreenSid extends ClickableScreen implements Runnable {
 	}
 	
 	public void changeText(String txt) {
-		
+		//RESUME
 	}
 
 	@Override

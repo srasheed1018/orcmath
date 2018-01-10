@@ -5,7 +5,7 @@ import java.awt.Color;
 import guiTeacher.components.Action;
 import guiTeacher.interfaces.Clickable;
 
-public interface ButtonInterfaceSid extends Clickable {
+public interface ButtonInterfaceSisi extends Clickable {
 
 	void setColor(Color color);
 	

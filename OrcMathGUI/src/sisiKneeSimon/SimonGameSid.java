@@ -5,7 +5,7 @@ import guiTeacher.GUIApplication;
 public class SimonGameSid extends GUIApplication {
 	
 	private static final long serialVersionUID = -2452328323352199392L;
-	public static SimonScreenSid game;
+	public static SimonScreenSisiKnee game;
 
 	public SimonGameSid(int width, int height) {
 		super(width, height);
@@ -14,12 +14,13 @@ public class SimonGameSid extends GUIApplication {
 
 	@Override
 	public void initScreen() {
-		game = new SimonScreenSid(800,500);
+		game = new SimonScreenSisiKnee(800,500);
 
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		
 
 	}
 

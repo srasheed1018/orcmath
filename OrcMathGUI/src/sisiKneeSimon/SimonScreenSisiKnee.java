@@ -13,10 +13,10 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 
 	private static final long serialVersionUID = -2452328323352199392L;
 	public TextLabel round;
-	public ButtonInterfaceSisi[] options;
+	public ButtonInterfaceSid[] options;
 	public ProgressInterfaceSid progress;
-	public ArrayList<MoveInterfaceSisi> moves;
-	private int roundNumber = 0;
+	public ArrayList<MoveInterfaceSid> moves;
+	private int currentRound = 0;
 	private boolean acceptingInput;
 	private int sequenceIndex;
 	private int lastSelectedButton;
@@ -40,9 +40,8 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 	public void nextRound() {
 		
 		acceptingInput = false;
-		roundNumber++;
 		moves.add(randomMove());
-		progress.setRound(roundNumber);
+		progress.setRound(currentRound++);
 		progress.setSequenceSize(moves.size());
 		
 		Thread label = new Thread(new Runnable() {
@@ -86,7 +85,7 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 	//Sisi
 	private void playSequence() {
 
-		ButtonInterfaceSisi b = null;
+		ButtonInterfaceSid b = null;
 		
 		for(int i = 0; i < moves.size(); i++) {
 			
@@ -97,7 +96,7 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 			b = getAButton();
 			b.highlight();
 			
-			double sleepTime = 5 * Math.pow(Math.E, -0.25 * (roundNumber - 1));
+			double sleepTime = 5 * Math.pow(Math.E, -0.25 * (currentRound - 1));
 			
 			try {
 				Thread.sleep((long)(sleepTime * 1000));
@@ -113,23 +112,23 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 	public void initAllObjects(List<Visible> viewObjects) {
 
 		addButtons();
-		for(ButtonInterfaceSisi b: options){ 
+		for(ButtonInterfaceSid b: options){ 
 		    viewObjects.add(b); 
 		}
 		progress = getProgress();
 		round = new TextLabel(130,230,300,40,"Let's play Simon!");
-		moves = new ArrayList<MoveInterfaceSisi>();
+		moves = new ArrayList<MoveInterfaceSid>();
 		//add 2 moves to start
 		lastSelectedButton = -1;
 		moves.add(randomMove());
 		moves.add(randomMove());
-		roundNumber = 0;
+		currentRound = 0;
 		viewObjects.add((Visible) progress);
 		viewObjects.add(round);
 
 	}
 
-	public MoveInterfaceSisi randomMove() {
+	public MoveInterfaceSid randomMove() {
 		int bIndex = (int)(Math.random()*options.length);
 	    while(bIndex == lastSelectedButton){
 	        bIndex = (int)(Math.random()*options.length);
@@ -141,7 +140,7 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 	/**
 	Placeholder until partner finishes implementation of MoveInterface
 	*/
-	public MoveInterfaceSisi getMove(int bIndex) {
+	public MoveInterfaceSid getMove(int bIndex) {
 		return null;
 	}
 
@@ -154,7 +153,7 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 	}
 
 	public void addButtons() {
-		options = new ButtonInterfaceSisi[numberOfButtons];
+		options = new ButtonInterfaceSid[numberOfButtons];
 		/*
 		colors[0] = Color.red;
 		colors[1] = Color.blue;
@@ -164,7 +163,7 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 		colors[5] = Color.darkGray;
 		*/
 		for (int i = 0; i < numberOfButtons; i++) {
-			final ButtonInterfaceSisi b = getAButton();
+			final ButtonInterfaceSid b = getAButton();
 			options[i] = b;
 			b.setColor(colors[i]);
 			b.setX(100*i);
@@ -204,7 +203,7 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 	}
 
 	/** placeholder */
-	private ButtonInterfaceSisi getAButton() {
+	private ButtonInterfaceSid getAButton() {
 		// TODO Auto-generated method stub
 		return null;
 	}

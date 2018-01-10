@@ -29,8 +29,8 @@ public abstract class Component implements Visible {
 
 	private int x;
 	private int y;
-	private int w;
-	private int h;
+	protected int w;
+	protected int h;
 	private float alpha;
 	protected BufferedImage image;
 	private BufferedImage buffer;

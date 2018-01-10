@@ -11,16 +11,17 @@ import guiTeacher.userInterfaces.ClickableScreen;
 
 public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 
+	private static final long serialVersionUID = -2452328323352199392L;
 	public TextLabel round;
 	public ButtonInterfaceSisi[] options;
 	public ProgressInterfaceSid progress;
 	public ArrayList<MoveInterfaceSisi> moves;
-	private int roundNumber;
+	private int roundNumber = 0;
 	private boolean acceptingInput;
 	private int sequenceIndex;
 	private int lastSelectedButton;
 	private int numberOfButtons = 6;
-	private Color[] colors;
+	private Color[] colors = {Color.red, Color.blue, Color.green, Color.magenta, Color.cyan, Color.darkGray};
 	
 	public SimonScreenSisiKnee(int width, int height) {
 		super(width, height);
@@ -123,7 +124,7 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 		moves.add(randomMove());
 		moves.add(randomMove());
 		roundNumber = 0;
-		viewObjects.add(progress);
+		viewObjects.add((Visible) progress);
 		viewObjects.add(round);
 
 	}
@@ -154,12 +155,14 @@ public class SimonScreenSisiKnee extends ClickableScreen implements Runnable {
 
 	public void addButtons() {
 		options = new ButtonInterfaceSisi[numberOfButtons];
+		/*
 		colors[0] = Color.red;
 		colors[1] = Color.blue;
 		colors[2] = Color.green;
 		colors[3] = Color.magenta;
 		colors[4] = Color.cyan;
 		colors[5] = Color.darkGray;
+		*/
 		for (int i = 0; i < numberOfButtons; i++) {
 			final ButtonInterfaceSisi b = getAButton();
 			options[i] = b;
